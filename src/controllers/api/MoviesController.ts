@@ -1,5 +1,5 @@
 import {Controller} from "@tsed/di";
-import {ContentType, Get, OperationId, Produces, Returns, Summary} from "@tsed/schema";
+import {ContentType, Get, OperationId, OperationPath, Produces, Returns, Summary} from "@tsed/schema";
 import {MoviesResponse, MovieResponse } from "./response/MoviesResponse.js";
 import ErrorResponse from "./response/ErrorResponse.js";
 import ApiResponse from "./response/ApiResponse.js";
@@ -14,11 +14,12 @@ export class MovieController {
    */
   @Get("/")
   @Summary("This Route will give all the movies present in the database")
-  @Returns(200,MoviesResponse)
   @Returns(401,ErrorResponse)
   @ContentType("application/json")
   @Produces("application/json")
   @OperationId("OMDB_Get_All_Movies")
+  @OperationPath("GET", "/movies")
+  @(Returns(200, ApiResponse).Of(MoviesResponse).Description("description"))
   async getAllMovies() : Promise<ApiResponse<MoviesResponse> | ErrorResponse> {
     
     let moviesResponse : MoviesResponse = new MoviesResponse(); 

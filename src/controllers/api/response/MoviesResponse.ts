@@ -17,6 +17,6 @@ export class MoviesResponse {
 
     @Property()
     @CollectionOf(MovieResponse)
-    data : Array<MovieResponse>
+    movies : Array<MovieResponse>
 }
 
