@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <h1>Ts.ED - learntsed</h1>
+  <h1>Ts.ED - Personal Template for starting projects</h1>
   <br />
   <div align="center">
     <a href="https://cli.tsed.dev/">Website</a>
